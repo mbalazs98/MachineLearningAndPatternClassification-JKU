@@ -1,0 +1,18 @@
+		
+First part:
+	Some visualizations:
+
+
+Than the 4 models:
+	1 - KNN
+	2 - SVM
+	3 - RF
+	4 - Logistic Regression
+	( 2 slides each )
+	 try to cover:
+	 	- overfitting problem
+	 	- how accuracy changes when you change relevant parameters
+
+Conclussions:
+	Which algorithm seems to work best on these data? What did you observe in terms of overfitting behaviour?
+
