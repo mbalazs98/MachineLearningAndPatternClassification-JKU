@@ -103,3 +103,18 @@ venv.bak/
 # mypy
 .mypy_cache/
 RadioProject/.idea/
+RadioProject/cmarc/alg_comparison.png
+RadioProject/cmarc/svm.py
+RadioProject/cmarc/try_multiple_models.py
+RadioProject/cmarc/raport/rf/plot_n_etimators_wrong.png
+RadioProject/cmarc/raport/rf/plot_n_etimators_ok.png
+RadioProject/cmarc/raport/rf/plot_n_etimators_1.png
+RadioProject/cmarc/raport/rf/plot_n_etimators.png
+RadioProject/cmarc/raport/rf/results.txt
+RadioProject/cmarc/raport/rf/min_samples_leaf/music_100_min_samples_leaf_60to500.png
+RadioProject/cmarc/raport/rf/min_samples_leaf/music_100_min_samples_leaf_1to50.png
+RadioProject/cmarc/raport/rf/speech_plot_n_etimators.png
+RadioProject/cmarc/models/random_forest/rf-01-all-speech.joblib
+RadioProject/cmarc/models/random_forest/rf-01-all-speech
+RadioProject/cmarc/models/random_forest/rf-01-all-music.joblib
+RadioProject/cmarc/models/random_forest/rf-01-all-music

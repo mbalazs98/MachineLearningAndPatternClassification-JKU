@@ -12,26 +12,31 @@ for i in range(1, 2):
     dfl.append(df)
 # data = pd.concat(datal)
 df = pd.concat(dfl)
-# print(df.corr(method='pearson'))
+with open("corr.txt", "w") as g:
+    g.write(str(df.corr(method='pearson')))
 # df['f000704'].plot(kind='hist', bins=50, figsize=(12, 6))
 # df['f000705'].plot(kind='hist', bins=50, figsize=(12, 6))
 
 music = df[df['class'] == b'music']
 no_music = df[df['class'] == b'no_music']
-ax1 = music['f000704'].plot(kind='hist', bins=50, figsize=(12, 6))
+
+fig = plt.figure()
+fig.subplots_adjust(hspace=0.4, wspace=0.4)
+
+# ax1 = music['f000704'].plot(kind='hist', bins=50, figsize=(12, 6))
 # plt.show()
-ax2 = no_music['f000704'].plot(kind='hist', bins=50, figsize=(12, 6))
+# ax2 = no_music['f000704'].plot(kind='hist', bins=50, figsize=(12, 6))
 # plt.show()
 ax3 = music['f000705'].plot(kind='hist', bins=50, figsize=(12, 6))
 # plt.show()
 ax4 = no_music['f000705'].plot(kind='hist', bins=50, figsize=(12, 6))
 
-fig = plt.figure()
-fig.subplots_adjust(hspace=0.4, wspace=0.4)
 
-fig.add_subplot(ax1)
-fig.add_subplot(ax2)
+# fig.add_subplot(ax1, label="704 music")
+# fig.add_subplot(ax2, label="704 no music")
+ax3.set_title("705 music")
 fig.add_subplot(ax3)
+ax4.set_title("705 no music")
 fig.add_subplot(ax4)
 
 plt.show()
