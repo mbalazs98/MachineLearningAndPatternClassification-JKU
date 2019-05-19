@@ -30,43 +30,6 @@ Total number of MUSIC instances for VALIDATION = 41118; 20.63265859117048% of da
 Total number of NO_MUSIC instances for VALIDATION = 12749; 24.324118062312785% of dataset
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-SPEECH
-
-For TRAINING
- 3.speech.arff speech - 7968; no_speech - 9993
- 4.speech.arff speech - 3595; no_speech - 14432
- 5.speech.arff speech - 4537; no_speech - 13431
- 8.speech.arff speech - 7837; no_speech - 10124
- 9.speech.arff speech - 11598; no_speech - 6409
- 12.speech.arff speech - 4104; no_speech - 14090
- 13.speech.arff speech - 2861; no_speech - 15461
- 14.speech.arff speech - 5051; no_speech - 13272
-Total number of SPEECH instances for TRAINING = 47551; 58.97359576341606% of dataset
-Total number of NO_SPEECH instances for TRAINING = 97212; 56.826525124511896% of dataset
-
-==================================================
-
-For TEST
- 1.speech.arff speech - 2140; no_speech - 15753
- 2.speech.arff speech - 3176; no_speech - 14040
- 6.speech.arff speech - 10250; no_speech - 7710
-Total number of SPEECH instances for TEST = 15566; 19.305229998387716% of dataset
-Total number of NO_SPEECH instances for TEST = 37503; 21.922861084481024% of dataset
-
-==================================================
-
-For VALIDATION
- 7.speech.arff speech - 1069; no_speech - 16891
- 10.speech.arff speech - 11110; no_speech - 6843
- 11.speech.arff speech - 5335; no_speech - 12619
-Total number of SPEECH instances for VALIDATION = 17514; 21.721174238196227% of dataset
-Total number of NO_SPEECH instances for VALIDATION = 36353; 21.250613791007083% of dataset
-
 
 SPEECH
 
