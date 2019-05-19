@@ -27,20 +27,20 @@ import pandas as pd
 
 -------------------> SPEECH <-------------------  
     
-    1.speech.arff speech - 2140; no_speech - 15753
-    2.speech.arff speech - 3176; no_speech - 14040
-    3.speech.arff speech - 7968; no_speech - 9993
-    4.speech.arff speech - 3595; no_speech - 14432
-    5.speech.arff speech - 4537; no_speech - 13431
-    6.speech.arff speech - 10250; no_speech - 7710
-    7.speech.arff speech - 1069; no_speech - 16891
-    8.speech.arff speech - 7837; no_speech - 10124
-    9.speech.arff speech - 11598; no_speech - 6409
-    10.speech.arff speech - 11110; no_speech - 6843
-    11.speech.arff speech - 5335; no_speech - 12619
-    12.speech.arff speech - 4104; no_speech - 14090
-    13.speech.arff speech - 2861; no_speech - 15461
-    14.speech.arff speech - 5051; no_speech - 13272  
+   " 1.speech.arff speech - 2140; no_speech - 15753",
+   " 2.speech.arff speech - 3176; no_speech - 14040",
+   " 3.speech.arff speech - 7968; no_speech - 9993",
+   " 4.speech.arff speech - 3595; no_speech - 14432",
+   " 5.speech.arff speech - 4537; no_speech - 13431",
+   " 6.speech.arff speech - 10250; no_speech - 7710",
+   " 7.speech.arff speech - 1069; no_speech - 16891",
+   " 8.speech.arff speech - 7837; no_speech - 10124",
+   " 9.speech.arff speech - 11598; no_speech - 6409",
+   " 10.speech.arff speech - 11110; no_speech - 6843",
+   " 11.speech.arff speech - 5335; no_speech - 12619",
+   " 12.speech.arff speech - 4104; no_speech - 14090",
+   " 13.speech.arff speech - 2861; no_speech - 15461",
+   " 14.speech.arff speech - 5051; no_speech - 13272",  
 """
 
 
@@ -286,76 +286,78 @@ def music_no_music_split():
 
 
 def speech_no_speech_split():
-    best_speech_cfgs = [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 1, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 12512.800000000003],
-                        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 12512.800000000003]]
+    best_speech_cfgs = [[0, 0, 0, 0, 1, 0, 1, 2, 2, 1, 2, 0, 0, 0, 14246.80000000001],
+                       [0, 0, 1, 0, 1, 0, 2, 1, 0, 2, 2, 0, 0, 0, 14154.80000000001],
+                       [0, 1, 0, 0, 0, 0, 0, 0, 2, 1, 1, 2, 0, 2, 13934.80000000001],
+                       [0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 2, 2, 0, 1, 13842.80000000001],
+                       [0, 1, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 0, 0, 13210.80000000001],
+                       [0, 1, 0, 0, 0, 0, 1, 2, 2, 1, 2, 0, 0, 0, 12742.80000000001],
+                       [0, 1, 0, 0, 1, 1, 2, 0, 0, 2, 2, 0, 0, 0, 12662.80000000001],
+                       [0, 1, 1, 0, 0, 0, 2, 1, 0, 2, 2, 0, 0, 0, 12650.80000000001],
+                       # [1, 1, 2, 0, 0, 0, 0, 2, 0, 1, 2, 0, 0, 0, 12608.80000000001],
+                       [1, 1, 0, 0, 0, 0, 0, 2, 0, 1, 2, 0, 0, 2, 12608.80000000001],
+                       [1, 1, 0, 0, 0, 1, 2, 0, 0, 2, 2, 0, 0, 0, 12512.80000000001]]
 
     info_speech_files = [
-        "1.speech.arff speech - 17431; no_speech - 462",
-        "2.speech.arff speech - 16877; no_speech - 339",
-        "3.speech.arff speech - 12393; no_speech - 5568",
-        "4.speech.arff speech - 16485; no_speech - 1542",
-        "5.speech.arff speech - 16387; no_speech - 1581",
-        "6.speech.arff speech - 7932; no_speech - 10028",
-        "7.speech.arff speech - 16997; no_speech - 963",
-        "8.speech.arff speech - 12117; no_speech - 5844",
-        "9.speech.arff speech - 12975; no_speech - 5032",
-        "10.speech.arff speech - 6780; no_speech - 11173",
-        "11.speech.arff speech - 17341; no_speech - 613",
-        "12.speech.arff speech - 16440; no_speech - 1754",
-        "13.speech.arff speech - 15190; no_speech - 3132",
-        "14.speech.arff speech - 13941; no_speech - 4382]"]
+        " 1.speech.arff speech - 2140; no_speech - 15753",
+        " 2.speech.arff speech - 3176; no_speech - 14040",
+        " 3.speech.arff speech - 7968; no_speech - 9993",
+        " 4.speech.arff speech - 3595; no_speech - 14432",
+        " 5.speech.arff speech - 4537; no_speech - 13431",
+        " 6.speech.arff speech - 10250; no_speech - 7710",
+        " 7.speech.arff speech - 1069; no_speech - 16891",
+        " 8.speech.arff speech - 7837; no_speech - 10124",
+        " 9.speech.arff speech - 11598; no_speech - 6409",
+        " 10.speech.arff speech - 11110; no_speech - 6843",
+        " 11.speech.arff speech - 5335; no_speech - 12619",
+        " 12.speech.arff speech - 4104; no_speech - 14090",
+        " 13.speech.arff speech - 2861; no_speech - 15461",
+        " 14.speech.arff speech - 5051; no_speech - 13272"
+        ]
 
     print("For TRAINING")
     speech_for_training = 0
     no_speech_for_training = 0
-    for i in range(len(best_speech_cfgs[-1]) - 1):
-        if best_speech_cfgs[-1][i] == 0:
+    for i in range(len(best_speech_cfgs[-2]) - 1):
+        if best_speech_cfgs[-2][i] == 0:
             print(info_speech_files[i])
             speech_for_training += speech[i]
             no_speech_for_training += no_speech[i]
-    print("Total number of MUSIC instances for TRAINING = {}; {}% of dataset".format(speech_for_training, (
+    print("Total number of SPEECH instances for TRAINING = {}; {}% of dataset".format(speech_for_training, (
             speech_for_training / sum(speech)) * 100))
-    print("Total number of NO_MUSIC instances for TRAINING = {}; {}% of dataset".format(no_speech_for_training, (
+    print("Total number of NO_SPEECH instances for TRAINING = {}; {}% of dataset".format(no_speech_for_training, (
             no_speech_for_training / sum(no_speech)) * 100))
 
     print("\n==================================================\n")
     speech_for_test = 0
     no_speech_for_test = 0
     print("For TEST")
-    for i in range(len(best_speech_cfgs[-1]) - 1):
-        if best_speech_cfgs[-1][i] == 1:
+    for i in range(len(best_speech_cfgs[-2]) - 1):
+        if best_speech_cfgs[-2][i] == 1:
             print(info_speech_files[i])
             speech_for_test += speech[i]
             no_speech_for_test += no_speech[i]
 
-    print("Total number of MUSIC instances for TEST = {}; {}% of dataset".format(speech_for_test, (
+    print("Total number of SPEECH instances for TEST = {}; {}% of dataset".format(speech_for_test, (
             speech_for_test / sum(speech)) * 100))
-    print("Total number of NO_MUSIC instances for TEST = {}; {}% of dataset".format(no_speech_for_test, (
+    print("Total number of NO_SPEECH instances for TEST = {}; {}% of dataset".format(no_speech_for_test, (
             no_speech_for_test / sum(no_speech)) * 100))
 
     print("\n==================================================\n")
     speech_for_validation = 0
     no_speech_for_validation = 0
     print("For VALIDATION")
-    for i in range(len(best_speech_cfgs[-1]) - 1):
-        if best_speech_cfgs[-1][i] == 2:
+    for i in range(len(best_speech_cfgs[-2]) - 1):
+        if best_speech_cfgs[-2][i] == 2:
             print(info_speech_files[i])
             speech_for_validation += speech[i]
             no_speech_for_validation += no_speech[i]
 
-    print("Total number of MUSIC instances for VALIDATION = {}; {}% of dataset".format(speech_for_validation, (
+    print("Total number of SPEECH instances for VALIDATION = {}; {}% of dataset".format(speech_for_validation, (
             speech_for_validation / sum(speech)) * 100))
-    print("Total number of NO_MUSIC instances for VALIDATION = {}; {}% of dataset".format(no_speech_for_validation, (
-            no_speech_for_validation / sum(no_music)) * 100))
+    print("Total number of NO_SPEECH instances for VALIDATION = {}; {}% of dataset".format(no_speech_for_validation, (
+            no_speech_for_validation / sum(no_speech)) * 100))
 
 
-get_best_10_cfgs_for_music()
+speech_no_speech_split()
 
