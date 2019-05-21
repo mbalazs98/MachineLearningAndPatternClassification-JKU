@@ -1,0 +1,34 @@
+
+
+
+SPEECH
+
+For TRAINING
+ 3.speech.arff speech - 7968; no_speech - 9993
+ 4.speech.arff speech - 3595; no_speech - 14432
+ 5.speech.arff speech - 4537; no_speech - 13431
+ 6.speech.arff speech - 10250; no_speech - 7710
+ 9.speech.arff speech - 11598; no_speech - 6409
+ 12.speech.arff speech - 4104; no_speech - 14090
+ 13.speech.arff speech - 2861; no_speech - 15461
+ 14.speech.arff speech - 5051; no_speech - 13272
+Total number of SPEECH instances for TRAINING = 49964; 61.96624127196736% of dataset
+Total number of NO_SPEECH instances for TRAINING = 94798; 55.415390371080505% of dataset
+
+==================================================
+
+For TEST
+ 1.speech.arff speech - 2140; no_speech - 15753
+ 2.speech.arff speech - 3176; no_speech - 14040
+ 10.speech.arff speech - 11110; no_speech - 6843
+Total number of SPEECH instances for TEST = 16426; 20.37181729111632% of dataset
+Total number of NO_SPEECH instances for TEST = 36636; 21.416045081488065% of dataset
+
+==================================================
+
+For VALIDATION
+ 7.speech.arff speech - 1069; no_speech - 16891
+ 8.speech.arff speech - 7837; no_speech - 10124
+ 11.speech.arff speech - 5335; no_speech - 12619
+Total number of SPEECH instances for VALIDATION = 14241; 17.661941436916322% of dataset
+Total number of NO_SPEECH instances for VALIDATION = 39634; 23.16856454743143% of dataset
