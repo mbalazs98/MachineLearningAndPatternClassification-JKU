@@ -4,11 +4,51 @@ input(speech) -> all classifiers(speech) -> (list of predicted classes from each
  a) - after (1) and (2) we update the cost according to the cost matrix
  b) - smoothing on the data-set used for test and than compute the cost
 
+
+INPUT for smoothing
 [
     [1, 0 ], =>
     [0, 1]
 ]
 
+
 [1 0] => music-only
 [1 1] => music& speech
 [0 1] => nom
+
+----------------------------------------------------------
+INPUT for postprocessing
+
+5 classifiers
+
+0 - NO_music/No_speech
+1 -music/speech
+
+for 1 instance [0, 1, 1, 1, 0] => 1
+
+def get_final_prediction(preds, wheights= [0.2, 0.5 ....])
+
+
+2 datasets (musicf, speechf) ->
+[
+    1 instance ->[
+        music_classifiers_output  -> [1 1 1 0 ...],
+        speech_classifiers_output -> [0 0 0 1 ...]
+    ]
+    .....
+]
+
+
+OUTPUT =>
+[
+    1 instance ->[
+        music final pred -> 1,
+        speech final prediction -> 0
+    ]
+    .....
+]
+
+
+----------------------------------------------------------------------
+
+check if for the same frame there are labels as : no_music and no_speech ???
