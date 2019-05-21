@@ -75,5 +75,5 @@ def load_data(root_dir=r'f:\SharedData\JKU\GIT\JKU-Computer-Science-Courses\ML-P
     return df
 
 
-a = load_validation_data('music')
-print(a.shape())
+# a = load_validation_data('music')
+# print(a.shape())

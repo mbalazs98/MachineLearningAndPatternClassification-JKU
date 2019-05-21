@@ -4,3 +4,11 @@ input(speech) -> all classifiers(speech) -> (list of predicted classes from each
  a) - after (1) and (2) we update the cost according to the cost matrix
  b) - smoothing on the data-set used for test and than compute the cost
 
+[
+    [1, 0 ], =>
+    [0, 1]
+]
+
+[1 0] => music-only
+[1 1] => music& speech
+[0 1] => nom
