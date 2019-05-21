@@ -1,4 +1,34 @@
+MUSIC
 
+For TRAINING
+3.music.arff music - 12393; no_music - 5568
+4.music.arff music - 16485; no_music - 1542
+5.music.arff music - 16387; no_music - 1581
+6.music.arff music - 7932; no_music - 10028
+9.music.arff music - 12975; no_music - 5032
+12.music.arff music - 16440; no_music - 1754
+13.music.arff music - 15190; no_music - 3132
+14.music.arff music - 13941; no_music - 4382]
+Total number of MUSIC instances for TRAINING = 111743; 56.071675882901964% of dataset
+Total number of NO_MUSIC instances for TRAINING = 33019; 62.99772957090798% of dataset
+
+==================================================
+
+For TEST
+1.music.arff music - 17431; no_music - 462
+2.music.arff music - 16877; no_music - 339
+10.music.arff music - 6780; no_music - 11173
+Total number of MUSIC instances for TEST = 41088; 20.617604849312045% of dataset
+Total number of NO_MUSIC instances for TEST = 11974; 22.845477267090224% of dataset
+
+==================================================
+
+For VALIDATION
+7.music.arff music - 16997; no_music - 963
+8.music.arff music - 12117; no_music - 5844
+11.music.arff music - 17341; no_music - 613
+Total number of MUSIC instances for VALIDATION = 46455; 23.310719267785995% of dataset
+Total number of NO_MUSIC instances for VALIDATION = 7420; 14.156793162001794% of dataset
 
 
 SPEECH
@@ -8,7 +38,7 @@ For TRAINING
  4.speech.arff speech - 3595; no_speech - 14432
  5.speech.arff speech - 4537; no_speech - 13431
  6.speech.arff speech - 10250; no_speech - 7710
- 9.speech.arff speech - 11598; no_speech - 6409
+ 9.speech.arff speech - 11598; no_speech - 6409 ->
  12.speech.arff speech - 4104; no_speech - 14090
  13.speech.arff speech - 2861; no_speech - 15461
  14.speech.arff speech - 5051; no_speech - 13272

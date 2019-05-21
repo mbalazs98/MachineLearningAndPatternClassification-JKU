@@ -1,0 +1,6 @@
+input(music) -> all classifiers(music) -> (list of predicted classes from each classifier) -> postprocessing ( decide which is the final prediction ) (1)
+input(speech) -> all classifiers(speech) -> (list of predicted classes from each classifier) -> postprocessing (decide which is the final prediction) (2)
+
+ a) - after (1) and (2) we update the cost according to the cost matrix
+ b) - smoothing on the data-set used for test and than compute the cost
+
