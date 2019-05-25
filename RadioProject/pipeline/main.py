@@ -11,4 +11,4 @@ class RadioPipeline:
         data_set = self.data_loader.load_data()
         predictions = self.classifier.get_predictions(data_set)
         total_gain = self.evaluator.get_gain(predictions)
-        print("Toatal gain: {}".format(total_gain))
+        print("Total gain: {}".format(total_gain))
