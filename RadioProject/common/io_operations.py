@@ -3,6 +3,20 @@ import os
 from scipy.io import arff
 import pandas as pd
 
+
+class DataLoader:
+    VALIDATION_FILES_NO = [7, 8, 11]
+
+    @staticmethod
+    def load_data():
+        """
+
+        :return: two data frames (df) : first one containing the dataset for music/no_music classifier and second one
+        containing the dataset for speech/no_speech classifier
+        """
+        return load_validation_data("music"), load_validation_data("speech")
+
+
 TRAINING_FILES_NO = [3, 4, 5, 6, 9, 12, 13, 14]
 TEST_FILES_NO = [1, 2, 10]
 VALIDATION_FILES_NO = [7, 8, 11]
@@ -23,6 +37,11 @@ def load_training_data(data_type):
 
 
 def load_test_data(data_type):
+    """
+
+    :param data_type:
+    :return:
+    """
     return load_data_from_list_of_files(data_type, TEST_FILES_NO)
 
 
@@ -73,7 +92,6 @@ def load_data(root_dir=r'f:\SharedData\JKU\GIT\JKU-Computer-Science-Courses\ML-P
             dfl.append(df)
     df = pd.concat(dfl)
     return df
-
 
 # a = load_validation_data('music')
 # print(a.shape())
