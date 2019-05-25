@@ -28,11 +28,15 @@ class GainComputer:
         "nomusic": 2
     }
 
-    def __init__(self, predictions, labels=None):
+    def __init__(self, predictions=None, labels=None):
         self.predictions = predictions
         self.labels = labels
 
-    def get_gain(self):
+    def get_gain(self, predictions=None, labels=None):
+        if predictions is not None:
+            self.predictions = predictions
+        if labels is not None:
+            self.labels = labels
         if self.labels is not None:
             return self.get_exact_gain()
         return self.get_expected_gain()

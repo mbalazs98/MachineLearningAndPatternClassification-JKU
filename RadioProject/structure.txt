@@ -11,10 +11,16 @@ INPUT for smoothing
     [0, 1]
 ]
 
+============================
+[music_pred speech_pred]
+1 - true
+0 - no
 
 [1 0] => music-only
 [1 1] => music& speech
-[0 1] => nom
+[0 1] => nomusic
+[0 0] => nomusic
+============================
 
 ----------------------------------------------------------
 INPUT for postprocessing
