@@ -19,6 +19,5 @@ for i in range(1,14):
 			if i in trainInd:
 				train=train+1
 			all=all+1
-	print(all)
 print(train)#1900 instances in trainng data when it is classified as no_music and no_speech at the same time
 print(all)#2137 instances in the whole dataset when it is classified as no_music and no_speech at the same time
