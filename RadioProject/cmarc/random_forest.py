@@ -471,12 +471,12 @@ def select_best_value_depth():
 
     for i in range(len(m_depths)):
         print("Music Difference train-test for {} depth is {}".format(m_depths[i],
-                                                                           m_accuracy_training[i] - m_accuracy_test[i]))
+                                                                      m_accuracy_training[i] - m_accuracy_test[i]))
 
     for i in range(len(s_depths)):
         print("Speech Difference train-test for {} depth is {}".format(s_depths[i],
-                                                                            s_accuracy_training[i] - s_accuracy_test[
-                                                                                i]))
+                                                                       s_accuracy_training[i] - s_accuracy_test[
+                                                                           i]))
 
 
 def select_best_value_min_samples_leaf():
@@ -490,8 +490,9 @@ def select_best_value_min_samples_leaf():
                            0.9063307253679883, 0.9031481235910357, 0.9008354329664501]
 
     s_min_samples = [1, 2, 4, 5, 10, 20, 30, 40, 50, 75, 100, 150, 200, 350, 500]
-    m_min_samples = [1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300,
-                400, 500]
+    m_min_samples = [1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250,
+                     300,
+                     400, 500]
     m_accuracy_test = [0.9856586570424541, 0.9828093836071802, 0.9804983062652357, 0.9787729129072087,
                        0.976683445721341, 0.9703358976794251, 0.9662202804951404, 0.963687592997119, 0.9612815398739988,
                        0.9593820242504828, 0.9577199480799062, 0.9564061164403077, 0.9548231867540444,
@@ -509,7 +510,8 @@ def select_best_value_min_samples_leaf():
 
     for i in range(len(m_min_samples)):
         print("Music Difference train-test for {} samples is {}".format(m_min_samples[i],
-                                                                        (m_accuracy_training[i] - m_accuracy_test[i])*100))
+                                                                        (m_accuracy_training[i] - m_accuracy_test[
+                                                                            i]) * 100))
         # if m_min_samples[i] == 70:
         print("Accuracy on test: {}".format(m_accuracy_test[i]))
         print("Accuracy on training: {}".format(m_accuracy_training[i]))
@@ -517,7 +519,7 @@ def select_best_value_min_samples_leaf():
     for i in range(len(s_min_samples)):
         print("Speech Difference train-test for {} samples is {}".format(s_min_samples[i],
                                                                          (s_accuracy_training[i] - s_accuracy_test[
-                                                                                i])*100))
+                                                                             i]) * 100))
         if s_min_samples[i] == 100:
             print("Accuracy on test: {}".format(s_accuracy_test[i]))
             print("Accuracy on training: {}".format(s_accuracy_training[i]))
@@ -538,7 +540,10 @@ def how_many_sampels_per_cat(data_type):
 if __name__ == "__main__":
     # get_graph_for_min_samples_leaf("speech")
     # select_best_value_min_samples_leaf()
-    how_many_sampels_per_cat("speech")
+
+    # how_many_sampels_per_cat("speech")
+    get_test_and_train_data(1, 0.3)
+
     # plot_vs_min_sample_leaf_music()
     # get_graph_for_max_depth("speech")
     # get_graph_for_n_estimators(data_type="speech")

@@ -1,3 +1,6 @@
+import logging
+
+
 class GainComputer:
     """
     Compute the expected gain for a predicted sequence.
@@ -24,15 +27,17 @@ class GainComputer:
 
     LABELS_TO_KEY = {
         "music-only": 0,
-        "musix&speech": 1,
+        "music&speech": 1,
         "nomusic": 2
     }
 
     def __init__(self, predictions=None, labels=None):
         self.predictions = predictions
         self.labels = labels
+        self.logger = logging.getLogger("main")
 
     def get_gain(self, predictions=None, labels=None):
+        self.logger.info("Get gain method...")
         if predictions is not None:
             self.predictions = predictions
         if labels is not None:
@@ -42,6 +47,11 @@ class GainComputer:
         return self.get_expected_gain()
 
     def get_exact_gain(self):
+        """
+        Exact gain means that we know the labels for the dataset. (Taking into consideration the penalty cost)
+        :return:
+        """
+        self.logger.info("Get exact gain ...")
         total_gain = 0
         for i in range(len(self.predictions)):
             pred = self.predictions[i]
@@ -51,13 +61,21 @@ class GainComputer:
             if isinstance(actual_label, str):
                 actual_label = self.LABELS_TO_KEY[actual_label]
             total_gain += self.COST_MATRIX[actual_label][pred]
+        self.logger.info("Exact gain = {}".format(total_gain))
         return total_gain
 
     def get_expected_gain(self):
+        """
+        Expected gain means that we compute the gain based on our predictions (we consider them to be correct)
+        :return:
+        """
+        self.logger.info("Get expected gain ...")
         total_gain = 0
+
         for i in range(len(self.predictions)):
             pred = self.predictions[i]
             if isinstance(pred, str):
                 pred = self.LABELS_TO_KEY[pred]
             total_gain += self.COST_MATRIX[pred][pred]
+        self.logger.info("Expected gain = {}".format(total_gain))
         return total_gain

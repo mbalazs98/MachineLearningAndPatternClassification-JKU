@@ -1,3 +1,4 @@
+import logging
 import os
 
 from scipy.io import arff
@@ -7,14 +8,23 @@ import pandas as pd
 class DataLoader:
     VALIDATION_FILES_NO = [7, 8, 11]
 
-    @staticmethod
-    def load_data():
+    def __init__(self, logger=None):
+        if logger is None:
+            logger = logging.getLogger("main")
+        self.logger = logger
+
+    def load_data(self):
         """
 
         :return: two data frames (df) : first one containing the dataset for music/no_music classifier and second one
         containing the dataset for speech/no_speech classifier
         """
-        return load_validation_data("music"), load_validation_data("speech")
+        self.logger.info("Start loading validation data sets")
+        music_ds = load_validation_data("music")
+        self.logger.info("Done loading music validation data sets")
+        speech_ds = load_validation_data("speech")
+        self.logger.info("Done loading speech validation data sets")
+        return music_ds, speech_ds
 
 
 TRAINING_FILES_NO = [3, 4, 5, 6, 9, 12, 13, 14]
