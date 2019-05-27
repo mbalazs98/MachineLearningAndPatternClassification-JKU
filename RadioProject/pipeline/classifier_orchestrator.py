@@ -146,11 +146,19 @@ class ClassifierOrchestrator:
             raise ValueError("WTF??? {}".format(instance_predictions))
         return [music_final_output, speech_final_output]
 
+    # todo @balazs the function below is the one
     def get_final_bi_predictions(self, all_predictions, weights=None):
         """
 
         :param weights:
         :param all_predictions:
+            [
+                1 instance ->[
+                    music_classifiers_output  -> [1 1 1 0 ...],
+                    speech_classifiers_output -> [0 0 0 1 ...]
+                ]
+                .....
+            ]
         :return:
         [
             1 instance ->[
