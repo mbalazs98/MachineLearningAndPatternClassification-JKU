@@ -2,7 +2,6 @@ import logging
 
 import joblib
 
-
 class ClassifierOrchestrator:
     MUSIC_CLASSIFIERS_OUTPUT_INDEX = 0
     SPEECH_CLASSIFIERS_OUTPUT_INDEX = 1
@@ -205,6 +204,7 @@ class ClassifierOrchestrator:
             final_bi_predictions.append(self.get_final_prediction_for_one_instance_weighed(all_predictions[i],weights))
         self.logger.info("Returning final bi prediction for {} instances.".format(len(all_predictions)))
         return final_bi_predictions
+		
 
     def get_final_predictions(self, music_data_set, speech_data_set, weights=None):
         """
