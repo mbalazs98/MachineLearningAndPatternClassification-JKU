@@ -26,6 +26,18 @@ class DataLoader:
         self.logger.info("Done loading speech validation data sets")
         return music_ds, speech_ds
 
+    @staticmethod
+    def are_datasets_labeled(music_df, speech_df):
+        """
+
+        :param music_df:
+        :param speech_df:
+        :return: true if both datasets has "class" column
+        """
+        music_columns = music_df.columns.tolist()  # get the columns
+        speech_columns = speech_df.columns.tolist()  # get the columns
+        return music_columns[-1] == 'class' and speech_columns[-1] == 'class'
+
 
 TRAINING_FILES_NO = [3, 4, 5, 6, 9, 12, 13, 14]
 TEST_FILES_NO = [1, 2, 10]

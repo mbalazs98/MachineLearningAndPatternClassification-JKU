@@ -94,35 +94,37 @@ class ClassifierOrchestrator:
 
         """
         self.logger.info("Get all predictions ...")
-        # delete the prediction col from dataframe
-        # TODO coment this if dataset has no prediction column
-
         columns = music_data_set.columns.tolist()  # get the columns
-        cols_to_use = columns[:len(columns) - 1]
-        music_data_set = music_data_set[cols_to_use]
+        if columns[-1] == 'class':
+            cols_to_use = columns[:len(columns) - 1]
+            new_music_data_set = music_data_set[cols_to_use]
+        else:
+            new_music_data_set = music_data_set
 
         columns = speech_data_set.columns.tolist()  # get the columns
-        cols_to_use = columns[:len(columns) - 1]
-        speech_data_set = speech_data_set[cols_to_use]
+        if columns[-1] == "class":
+            cols_to_use = columns[:len(columns) - 1]
+            new_speech_data_set = speech_data_set[cols_to_use]
+        else:
+            new_speech_data_set = speech_data_set
         self.logger.info("Class column was removed from datasets")
-        # TODO until here
 
         result = list()
-        for i in range(music_data_set.shape[0]):
+        for i in range(new_music_data_set.shape[0]):
             result.append([list(), list()])
         self.logger.info(
             "Get MUSIC classifiers output. {} music classifiers are used.".format(len(self.music_classifiers)))
         for music_classifier in self.music_classifiers:
-            current_pred = music_classifier.predict(music_data_set)
+            current_pred = music_classifier.predict(new_music_data_set)
             for i in range(len(current_pred)):
                 result[i][self.MUSIC_CLASSIFIERS_OUTPUT_INDEX].append(self.LABEL_TO_INT_KEY[current_pred[i]])
         self.logger.info(
             "Get SPEECH classifiers output. {} speech classifiers are used.".format(len(self.speech_classifiers)))
         for speech_classifier in self.speech_classifiers:
-            current_pred = speech_classifier.predict(speech_data_set)
+            current_pred = speech_classifier.predict(new_speech_data_set)
             for i in range(len(current_pred)):
                 result[i][self.SPEECH_CLASSIFIERS_OUTPUT_INDEX].append(self.LABEL_TO_INT_KEY[current_pred[i]])
-        self.logger.info("Returning all predictions for {} instances".format(music_data_set.shape[0]))
+        self.logger.info("Returning all predictions for {} instances".format(new_music_data_set.shape[0]))
         return result
 
     def get_final_prediction_for_one_instance(self, instance_predictions):
