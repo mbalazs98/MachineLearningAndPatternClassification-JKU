@@ -1,6 +1,8 @@
 import logging
 
 import joblib
+import pipeline.smoothing_utils
+from pipeline import smoothing_utils
 
 
 class ClassifierOrchestrator:
@@ -169,7 +171,7 @@ class ClassifierOrchestrator:
         self.logger.info("Returning final bi prediction for {} instances.".format(len(all_predictions)))
         return final_bi_predictions
 
-    def get_final_predictions(self, music_data_set, speech_data_set, weights=None):
+    def get_final_predictions(self, music_data_set, speech_data_set, weights=None, smoothing_on_bi_prediction=False):
         """
 
         :param speech_data_set:
@@ -186,6 +188,9 @@ class ClassifierOrchestrator:
         self.logger.info("Get final predictions ...")
         all_predictions = self.get_all_predictions(music_data_set, speech_data_set)
         final_bi_predictions = self.get_final_bi_predictions(all_predictions, weights)
+        if smoothing_on_bi_prediction:
+            smoothing_on_bi_predicion_obj = smoothing_utils.SmoothingOnBiPredictions(final_bi_predictions)
+            final_bi_predictions = smoothing_on_bi_predicion_obj.get_smoothing_result()
         final_predictions = list()
         self.logger.info("Start computing final predictions for {} instances.".format(len(final_bi_predictions)))
         for bi_pred in final_bi_predictions:

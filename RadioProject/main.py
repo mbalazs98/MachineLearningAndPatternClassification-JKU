@@ -5,6 +5,7 @@ import os
 from common.io_operations import DataLoader
 from pipeline.classifier_orchestrator import ClassifierOrchestrator
 from pipeline.gain_computer import GainComputer
+from pipeline.smoothing_utils import SmoothingOnFinalPredictions
 
 
 class RadioPipeline:
@@ -18,10 +19,16 @@ class RadioPipeline:
         self.gain_computer = evaluator
         self.logger = logging.getLogger("main")
 
-    def run(self):
+    def run(self, smoothing_on_final_prediction=False, smoothing_on_bi_predictions=False):
         music_data_set, speech_data_set = self.data_loader.load_data()
         self.classifier.load_classifiers()
-        predictions = self.classifier.get_final_predictions(music_data_set, speech_data_set)
+        predictions = self.classifier.get_final_predictions(music_data_set, speech_data_set,
+                                                            smoothing_on_bi_prediction=smoothing_on_bi_predictions)
+
+        if smoothing_on_final_prediction:
+            smoothing_final_pred_object = SmoothingOnFinalPredictions(predictions)
+            predictions = smoothing_final_pred_object.get_smoothing_result()
+
         total_gain = self.gain_computer.get_gain(predictions)
         if self.data_loader.are_datasets_labeled(music_data_set, speech_data_set):
             max_possible_gain = self.gain_computer.get_max_possible_gain(music_data_set, speech_data_set)
@@ -68,3 +75,4 @@ if __name__ == "__main__":
     classifier_orchestrator = ClassifierOrchestrator()
     pipe = RadioPipeline(data_loader, classifier_orchestrator, gain_computer)
     pipe.run()
+    # pipe.run(smoothing_on_bi_predictions=True, smoothing_on_final_prediction=True)
