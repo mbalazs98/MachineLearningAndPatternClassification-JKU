@@ -28,24 +28,3 @@ def plot_vote_weight_acc(data_type,preds,std_weights):
 			acc_arr.append(acc/total)
 		plt.plot(range(0,1,0.1),acc_arr,col[i])
 	plt.show()
-
-'''
-#This function shows that by adjusting the weights, how much do the classifiers agree. Maximize this.
-def try_weigths(preds, weights):
-	final=[]
-	t_all=0
-	f_all=0
-	for i in preds:
-		t=0
-		f=0
-		for j in preds[i]:
-			if preds[i][j]==1:
-				t=t+weights[j]
-				t_all=t_all+weights[j]
-			else:
-				f=f+weights[j]
-				f_all=f_all+weights[j]
-		final.add(abs(t-f))
-	t_all=abs(t_all-f_all)/len(final)
-	return final,t_all
-'''
